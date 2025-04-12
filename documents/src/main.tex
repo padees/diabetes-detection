@@ -1,6 +1,8 @@
 % /* Setup and package imports */
 \documentclass{article}
 \usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{float}
 \usepackage{cite}
 \usepackage[english]{babel}
 \usepackage[a4paper ,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
@@ -11,10 +13,10 @@
 
 % /* Start of content */
 \title{Diabetes Detection With Machine Learning}
-\author{author-list}
+% \author{author-list}
 
 \begin{document}
-\maketitle
+% \maketitle
 \fontsize{10}{12}\selectfont
 
 % /* Abstract */
@@ -104,10 +106,84 @@ Seto et al. provided evidence that Gradient Boosted Decision Trees (GBDT) and lo
 
 Salem et al. utilised the basic K - nearest neighbours and two of its variants which allow partial membership in multiple classes, Fuzzy KNN nand TFKNN. TFKNN turned out to be the best performer with 94.13\% specific accuracy\cite{salem2022fine}
 
+While instance-based algorithms like KNN and its fuzzy variants excel in modeling local data relationships, they tend to struggle with high-dimensional datasets and are computationally expensive during inference. These limitations have led researchers to increasingly explore ensemble methods and boosting techniques, which offer a better balance between predictive power and computational efficiency. In particular, Gradient Boosting frameworks such as XGBoost have emerged as state-of-the-art due to their ability to model complex, non-linear interactions while mitigating overfitting through regularization.
+
+Despite the abundance of research in binary diabetes classification, the task of differentiating between diabetes subtypes remains largely underexplored. The majority of publicly available datasets, including the widely-used Pima Indians dataset, lack subtype annotations, making it challenging for researchers to develop models that can distinguish between conditions like Type 1 Diabetes, Type 2 Diabetes, Prediabetes, and Pancreatogenic Diabetes. As a result, current models often provide a binary outcome that fails to capture the nuanced differences between these clinically distinct subtypes, limiting their real-world applicability in personalized treatment and early intervention strategies.
 
 
-%	\section{Methodology}
-%
+\section{Methodology}
+\subsection{Dataset}
+A targeted set of physiologically relevant features was selected based on clinical significance and exploratory data analysis. These attributes were chosen to ensure effectiveness in both diabetes detection and subtype classification. The selection balances medical relevance with predictive utility.
+
+Age plays a critical role in subtype differentiation.
+Type 1 Diabetes is commonly diagnosed in youth due to autoimmune $\beta$-cell destruction.
+Type 2 Diabetes correlates with age-related insulin resistance and $\beta$-cell decline.
+Type 3c (Pancreatogenic) Diabetes often follows chronic pancreatic diseases in older adults.
+Age thus reflects both pathophysiology and onset window.
+It helps the model separate autoimmune, metabolic, and secondary causes.
+
+BMI (Body Mass Index) quantifies body fat based on height and weight.
+High BMI is directly linked to obesity-induced insulin resistance, a hallmark of Type 2 Diabetes.
+Excess adipose tissue disrupts insulin signaling and increases systemic inflammation.
+Obesity also elevates free fatty acids, impairing glucose uptake in muscles and liver.
+Higher BMI correlates with increased diabetes onset risk and disease progression.
+
+Waist Circumference measures visceral fat, which is more metabolically active than subcutaneous fat.
+Visceral adiposity is strongly linked to insulin resistance and chronic inflammation.
+Unlike BMI, it specifically captures central obesity, a better predictor of Type 2 Diabetes.
+Excess abdominal fat increases hepatic glucose production and impairs insulin action.
+Studies show waist circumference independently correlates with diabetes risk.
+
+Cholesterol Levels, particularly HDL and LDL, are often disrupted in diabetic patients.
+Type 2 Diabetes commonly presents with dyslipidemia: high LDL, low HDL, and elevated triglycerides.
+This lipid imbalance contributes to insulin resistance and vascular complications.
+Cholesterol abnormalities are also part of the metabolic syndrome cluster.
+They signal cardiovascular risk, which is elevated in all diabetes types.
+
+Blood Glucose Levels are the primary diagnostic indicator for diabetes.
+Fasting glucose >126 mg/dL or postprandial >200 mg/dL confirms diabetic status.
+Chronic hyperglycemia results from impaired insulin production or action.
+It causes cellular damage, inflammation, and glucose toxicity across tissues.
+Prediabetes, Type 1, and Type 2 each show distinct glucose patterns.
+The model relies on glucose levels for both detection and subtype separation.
+
+Insulin Levels indicate the pancreas’s ability to produce insulin and the body’s response to it.
+Low insulin suggests Type 1 Diabetes due to $\beta$-cell destruction.
+High insulin with hyperglycemia points to insulin resistance, typical of Type 2 and Prediabetes.
+Insulin levels help differentiate between deficiency-driven and resistance-driven diabetes.
+They also aid in identifying compensation failure in later Type 2 stages.
+
+Pancreatic Health Indicators reflect structural or functional pancreatic abnormalities.
+Conditions like chronic pancreatitis or pancreatic tumors impair insulin secretion.
+Such damage leads to Pancreatogenic (Type 3c) Diabetes, distinct from Types 1 and 2.
+Markers may include pancreatic enzyme levels, history of surgery, or imaging findings.
+These features are rare in standard datasets but critical for detecting Type 3c.
+Their inclusion enables the model to capture secondary diabetes from exocrine dysfunction.
+
+INSERT 2 TABLES HERE
+
+\subsection{Machine Learning Models}
+Five supervised learning algorithms were employed to build and evaluate the predictive models: Naive Bayes Classifier, K-Nearest Neighbours (KNN), Logistic Regression, Random Forest, and XGBoost. These models were selected to represent a range of learning strategies — from simple probabilistic methods to advanced ensemble techniques. Each model was trained and tested in both stages: a binary classification to detect the presence of diabetes, and a multiclass classification to distinguish between subtypes. Among these, XGBoost consistently outperformed the others, showing higher accuracy and better handling of class imbalance, making it the most promising candidate for final deployment and interpretation.
+
+
+\begin{table*}[!htbp]
+\centering
+\caption{Performance Comparison of Machine Learning Models for Diabetes Detection}
+\label{tab:model-performance}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Specificity} & \textbf{MCC} & \textbf{AUC} \\
+\midrule
+Decision Tree         & 01 & -- & -- & -- & -- & -- & -- \\
+Naive Bayes           & -- & -- & -- & -- & -- & -- & -- \\
+K-Nearest Neighbors   & -- & -- & -- & -- & -- & -- & -- \\
+Logistic Regression   & -- & -- & -- & -- & -- & -- & -- \\
+Random Forest         & -- & -- & -- & -- & -- & -- & -- \\
+XGBoost               & -- & -- & -- & -- & -- & -- & -- \\
+Voting Classifier     & -- & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
 %	\section{Result}
 %
 %	\section{Conclusion}
