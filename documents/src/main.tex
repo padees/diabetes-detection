@@ -1,6 +1,8 @@
 % /* Setup and package imports */
 \documentclass{article}
 \usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{comment}
@@ -102,7 +104,7 @@ By developing the model in this manner, we address the critical limitation of ex
 
 \section{Literature Review}
 
-Many attempts have been made to successfully integrate ML techniques for detection of diabetes, and several different techniques have been used for the same.
+Many attempts have been made to successfully integrate ML techniques for detection of diabetes, and several different techniques have been used for the same\cite{sharma2021comprehensive}.
 
 KNN predicts the class of a data point by looking at the classes of its nearest neighbours in the feature space. It is a simple, non-parametric method that relies totally on the data’s structure. While it gives a straightforward interpretation, it is sensitive to the choice of distance metric and the number of neighbors.
 Logistic Regression predicts the probability of a binary outcome using a sigmoid function. It learns the relationship between input features and the log-odds of the target variable, making linear classifier. However, it assumes a linear relationship between features and the target, which can limit its performance on complex datasets.
@@ -110,7 +112,12 @@ Decision Trees split the data into regions based on feature values, aiming to ma
 They are intuitive and easy to interpret, but they tend to overfit the training data, especially when grown too deep.
 To counter this, a Random Forest classifier can be used, that combines multiple decision trees, each trained on a random subset of the data and features. The final prediction is made by averaging or taking a majority vote from all trees. This ensemble approach makes Random Forest robust and reliable for classification tasks.
 
+Abdulhadi and Al-Mousa obtained an accuracy of 82\% using the Random Forest Classifier\cite{abdulhadi2021diabetes}.
+Ghosh et.al obtained an accuracy of 99.35\% using Random Forest Classifier \cite{ghosh2021comparative}.
+Thotad et.al also concluded that Random Forest outperformed other models in detection on Indian demographic dataset \cite{thotad2023diabetes}.
+
 It has been shown that ensemble techniques perform better than logistic regression, due to the fact that LR sufferrs from assuming linear relationships and is much more sensitive to outliers.
+One exception is the study by Khaleel and Al-Bakry, where Logistic Regression showed an accuracy of 94\%, above that of Naive Bayes 79\% and KNN 69\% \cite{khaleel2023diagnosis}.
 Rajendra and Latifi concluded that the ensemble techinques Max Voting and Stacking fare better than Logistic Regression, with the latter having an accuracy 93.04\% of to the former's 74.03 when trained without feature selection\cite{rajendra2021prediction}.
 Seto et al. provided evidence that Gradient Boosted Decision Trees (GBDT) and logistic regression models perform somewhat equally upto training data size of $10^{4}$, GBDT shows a significant increase after this number, while LR the model's metrics become saturated\cite{seto2022gradient}.
 
@@ -118,7 +125,12 @@ Salem et al. utilised the basic K - nearest neighbours and two of its variants w
 
 While instance-based algorithms like KNN and its fuzzy variants excel in modeling local data relationships, they tend to struggle with high-dimensional datasets and are computationally expensive during inference. These limitations have led researchers to increasingly explore ensemble methods and boosting techniques, which offer a better balance between predictive power and computational efficiency. In particular, Gradient Boosting frameworks such as XGBoost have emerged as state-of-the-art due to their ability to model complex, non-linear interactions while mitigating overfitting through regularization.
 
+Maulana et.al compared siz other popular machine learning models with XGBoost, and concluded its superiority in diabetes predictive capabilities, and notes that it achieves the achieves the highest performance in accuracy, precision, sensitivity, and F1-score \cite{maulana2023machine}.
+
+
 Despite the abundance of research in binary diabetes classification, the task of differentiating between diabetes subtypes remains largely underexplored. The majority of publicly available datasets, including the widely-used Pima Indians dataset, lack subtype annotations, making it challenging for researchers to develop models that can distinguish between conditions like Type 1 Diabetes, Type 2 Diabetes, Prediabetes, and Pancreatogenic Diabetes. As a result, current models often provide a binary outcome that fails to capture the nuanced differences between these clinically distinct subtypes, limiting their real-world applicability in personalized treatment and early intervention strategies.
+
+Uddin et.al notes the necessity for a balanced dataset to aid in the reduction of false-negative detections \cite{uddin2024machine}.
 
 
 \section{Methodology}
@@ -170,15 +182,47 @@ Markers may include pancreatic enzyme levels, history of surgery, or imaging fin
 These features are rare in standard datasets but critical for detecting Type 3c.
 Their inclusion enables the model to capture secondary diabetes from exocrine dysfunction.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/feature_importance/correlation_matrix.png}
+    \caption{Correlation matrix of input features}
+    \label{fig:correlation_matrix}
+\end{figure}
 
-\includegraphics[width=0.5\textwidth]{../../assets/feature_importance/correlation_matrix.png}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/matrices/randomForest.png}
+    \caption{Random Forest confusion matrix}
+    \label{fig:rf_matrix}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/matrices/decisionTree.png}
+    \caption{Decision Tree confusion matrix}
+    \label{fig:dt_matrix}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/matrices/discreteBayes.png}
+    \caption{Discrete Bayes confusion matrix}
+    \label{fig:bayes_matrix}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/matrices/logisticRegression.png}
+    \caption{Logistic Regression confusion matrix}
+    \label{fig:lr_matrix}
+\end{figure}
 
-
-
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{../../assets/matrices/logisticRegression.png}
+    \caption{Logistic Regression confusion matrix}
+    \label{fig:lr_matrix}
+\end{figure}
 
 \subsection{Machine Learning Models}
 Five supervised learning algorithms were employed to build and evaluate the predictive models: Naive Bayes Classifier, K-Nearest Neighbours (KNN), Logistic Regression, Random Forest, and XGBoost. These models were selected to represent a range of learning strategies — from simple probabilistic methods to advanced ensemble techniques. Each model was trained and tested in both stages: a binary classification to detect the presence of diabetes, and a multiclass classification to distinguish between subtypes. Among these, XGBoost consistently outperformed the others, showing higher accuracy and better handling of class imbalance, making it the most promising candidate for final deployment and interpretation.

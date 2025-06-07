@@ -48,6 +48,38 @@ Channabasappa Shivaprasad, Yalamanchi Aiswarya, Shah Kejal, Atluri Sridevi,
 \newblock {\em Journal of diabetes science and technology}, 15(1):134--140,
   2021.
 
+\bibitem{sharma2021comprehensive}
+Toshita Sharma and Manan Shah.
+\newblock A comprehensive review of machine learning techniques on diabetes
+  detection.
+\newblock {\em Visual Computing for Industry, Biomedicine, and Art}, 4(1):30,
+  2021.
+
+\bibitem{abdulhadi2021diabetes}
+Nour Abdulhadi and Amjed Al-Mousa.
+\newblock Diabetes detection using machine learning classification methods.
+\newblock In {\em 2021 international conference on information technology
+  (ICIT)}, pages 350--354. IEEE, 2021.
+
+\bibitem{ghosh2021comparative}
+Pronab Ghosh, Sami Azam, Asif Karim, Mehedi Hassan, Kuber Roy, and Mirjam
+  Jonkman.
+\newblock A comparative study of different machine learning tools in detecting
+  diabetes.
+\newblock {\em Procedia Computer Science}, 192:467--477, 2021.
+
+\bibitem{thotad2023diabetes}
+Puneeth~N Thotad, Geeta~R Bharamagoudar, and Basavaraj~S Anami.
+\newblock Diabetes disease detection and classification on indian demographic
+  and health survey data using machine learning methods.
+\newblock {\em Diabetes \& Metabolic Syndrome: Clinical Research \& Reviews},
+  17(1):102690, 2023.
+
+\bibitem{khaleel2023diagnosis}
+Fayroza~Alaa Khaleel and Abbas~M Al-Bakry.
+\newblock Diagnosis of diabetes using machine learning algorithms.
+\newblock {\em Materials Today: Proceedings}, 80:3200--3203, 2023.
+
 \bibitem{rajendra2021prediction}
 Priyanka Rajendra and Shahram Latifi.
 \newblock Prediction of diabetes using logistic regression and ensemble
@@ -69,5 +101,20 @@ Hanaa Salem, Mahmoud~Y Shams, Omar~M Elzeki, Mohamed Abd~Elfattah, Jehad
 \newblock Fine-tuning fuzzy knn classifier based on uncertainty membership for
   the medical diagnosis of diabetes.
 \newblock {\em Applied Sciences}, 12(3):950, 2022.
+
+\bibitem{maulana2023machine}
+Aga Maulana, Farassa~Rani Faisal, Teuku~Rizky Noviandy, Tatsa Rizkia,
+  Ghazi~Mauer Idroes, Trina~Ekawati Tallei, Mohamed El-Shazly, and Rinaldi
+  Idroes.
+\newblock Machine learning approach for diabetes detection using fine-tuned
+  xgboost algorithm.
+\newblock {\em Infolitika Journal of Data Science}, 1(1):1--7, 2023.
+
+\bibitem{uddin2024machine}
+Md~Ashraf Uddin, Md~Manowarul Islam, Md~Alamin Talukder, Md~Al~Amin Hossain,
+  Arnisha Akhter, Sunil Aryal, and Maisha Muntaha.
+\newblock Machine learning based diabetes detection model for false negative
+  reduction.
+\newblock {\em Biomedical Materials \& Devices}, 2(1):427--443, 2024.
 
 \end{thebibliography}
