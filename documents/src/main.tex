@@ -247,90 +247,30 @@ Five supervised learning algorithms were employed to build and evaluate the pred
 %\end{table}
 
 \section{Results and Conclusion}
+
 \subsection{Results}
-In this section, we present the results of our machine
-learning experiments for diabetes detection using various supervised learning algorithms. We interpret the
-performance of each model based on relevant metrics
-such as accuracy, precision, recall, F1-score, specificity.
-The findings are visualized and compared comprehensively to determine the most effective classifier for the
-problem domain. Performance of the Decision Tree
-classifier was optimized using cost-complexity pruning
-with cross-validation. The optimal ccp alpha value was
-de- termined through a 10-fold Stratified K-Fold crossvalidation process, balancing generalization and model
-simplicity. The final pruned tree achieved a testing
-accuracy of approximately 80 without overfitting the
-training data. The classification report demonstrated
-fairly balanced precision and recall values across the
-target classes, with the F1-score reflecting this balance.
+In this section, we present the results of our machine learning experiments for diabetes detection using various supervised learning algorithms. We interpret the performance of each model based on relevant metrics such as accuracy, precision, recall, F1-score, specificity, Matthews Correlation Coefficient (MCC), and Area Under the Curve (AUC). The findings are visualized and compared comprehensively to determine the most effective classifier for the problem domain.
 
-The confusion matrices further revealed that the
-Decision Tree classifier was moderately effective in
-correctly classifying samples across all categories, although minor misclassifications between adjacent or
-overlapping conditions (e.g., class 2 vs. class 3) were
-observed. The feature importance plot provided
-insights into which attributes most influenced the
-model’s decisions. In this case, features like Blood Glucose Level, Insulin, and BMI were identified as strong
-contributors to the model’s decisions.
+Performance of the Decision Tree classifier was optimized using cost-complexity pruning with cross-validation. The optimal \texttt{ccp\_alpha} value was determined through a 10-fold Stratified K-Fold cross-validation process, balancing generalization and model simplicity. The final pruned tree achieved a testing accuracy of approximately 80\%, indicating a robust fit without overfitting the training data. The classification report demonstrated fairly balanced precision and recall values across the target classes, with the F1-score reflecting this balance.
 
-In contrast, the Naive Bayes classifier, optimized
-using GridSearchCV over the var smoothing parameter, showed slightly lower performance compared to the
-Decision Tree. The best model achieved a test accuracy of approximately 78 but slightly lower recall.
-This indicates that while the model was confident in
-its positive predictions, it had difficulty in identifying all relevant instances across classes. Given that
-Naive Bayes assumes independence between features,
-the slightly diminished performance is expected, especially in a dataset where attributes like BMI and insulin
-levels may be correlated. Nonetheless, the confusion
-matrix for Naive Bayes revealed that the classifier managed to achieve reasonably good separation across the
-five target classes, although misclassifications were
-more prominent when compared to the Decision Tree.
-Particularly, class overlaps and false positives in adjacent classes highlighted the limitation of the strong
-independence assumption of the model. A consolidated
-table comparing all the models implemented (including additional models such as Lo- gistic Regression, KNearest Neighbors, Random Forest, XGBoost, and
-Voting Classifier) demonstrates that ensemble-based
-approaches consistently outperformed individual classifiers. XGBoost achieved the highest testing accuracy
-of 88. These models
-also recorded the highest F1-scores and AUC values,
-signifying strong discrimination capabilities. Decision Tree and KNN offered a balance between interpretability and accuracy, while Naive Bayes and Logistic Regres- sion, though slightly less accurate, maintained good precision.
+The confusion matrices further revealed that the Decision Tree classifier was moderately effective in correctly classifying samples across all categories, although minor misclassifications between adjacent or overlapping conditions (e.g., class 2 vs. class 3) were observed. The feature importance plot provided insights into which attributes most influenced the model's decisions. In this case, features like \texttt{Blood Glucose Level}, \texttt{Insulin}, and \texttt{BMI} were identified as strong contributors to the model’s decisions, aligning with known medical knowledge regarding diabetes biomarkers.
+
+In contrast, the Naive Bayes classifier, optimized using \texttt{GridSearchCV} over the \texttt{var\_smoothing} parameter, showed slightly lower performance compared to the Decision Tree. The best model achieved a test accuracy of approximately 78\%, with a relatively higher precision but slightly lower recall. This indicates that while the model was confident in its positive predictions, it had difficulty in identifying all relevant instances across classes. Given that Naive Bayes assumes independence between features, the slightly diminished performance is expected, especially in a dataset where attributes like BMI and insulin levels may be correlated.
+
+Nonetheless, the confusion matrix for Naive Bayes revealed that the classifier managed to achieve reasonably good separation across the five target classes, although misclassifications were more prominent when compared to the Decision Tree. Particularly, class overlaps and false positives in adjacent classes highlighted the limitation of the strong independence assumption of the model.
+
+A consolidated table comparing all the models implemented (including additional models such as Logistic Regression, K-Nearest Neighbors, Random Forest, XGBoost, and Voting Classifier) demonstrates that ensemble-based approaches consistently outperformed individual classifiers. XGBoost achieved the highest testing accuracy of 88\%, followed closely by the Voting Classifier and Random Forest. These models also recorded the highest F1-scores and AUC values, signifying strong discrimination capabilities. Decision Tree and KNN offered a balance between interpretability and accuracy, while Naive Bayes and Logistic Regression, though slightly less accurate, maintained good precision.
 
 \subsection{Conclusion}
-In contrast, the Naive Bayes classifier, optimized
-using GridSearchCV over the var smoothing parameter, showed slightly lower performance compared to the
-Decision Tree. The best model achieved a test accuracy of approximately 78sion but slightly lower recall.
-This indicates that while the model was confident in
-its positive predictions, it had difficulty in identifying all relevant instances across classes. Given that
-Naive Bayes assumes independence between features,
-the slightly diminished performance is expected, especially in a dataset where attributes like BMI and insulin
-levels may be correlated. Nonetheless, the confusion
-matrix for Naive Bayes revealed that the classifier managed to achieve reasonably good separation across the
-five target classes, al- though misclassifications were
-more prominent when compared to the Decision Tree.
-Particularly, class over- laps and false positives in adjacent classes highlighted the limitation of the strong
-independence assumption of the model. A consolidated
-table comparing all the models implemented (including additional models such as Logistic Regression, KNearest Neighbors, Random Forest, XGBoost, and
-Voting Classifier) demonstrates that ensemble-based
-approaches consistently outperformed individual classifiers. XGBoost achieved the highest testing accuracy
-of 88ing Classifier and Random Forest. These models
-also recorded the highest F1-scores and AUC values,
-signifying strong discrimination capabilities. Decision Tree and KNN offered a balance between interpretability and accuracy, while Naive Bayes and Logistic Regression, though slightly less accurate, maintained good precision 
-In contrast, the Naive Bayes classifier, optimized
-using GridSearchCV over the var smoothing parameter, showed slightly lower performance compared to the
-Decision Tree. The best model achieved a test accuracy of approximately 78sion but slightly lower recall.
-This indicates that while the model was confident in
-its positive predictions, it had difficulty in identifying all relevant instances across classes. Given that
-Naive Bayes assumes independence between features,
-the slightly diminished performance is expected, especially in a dataset where attributes like BMI and insulin
-levels may be correlated. Nonetheless, the confusion
-matrix for Naive Bayes revealed that the classifier managed to achieve reasonably good separation across the
-five target classes, although misclassifications were
-more prominent when compared to the Decision Tree.
-Particularly, class overlaps and false positives in adjacent classes highlighted the limitation of the strong
-independence assumption of the model. A consolidated
-table comparing all the models implemented (including additional models such as Logistic Regression, KNearest Neighbors, Random Forest, XGBoost, and
-Voting Classifier) demonstrates that ensemble-based
-approaches consistently outperformed individual classifiers. XGBoost achieved the highest testing accuracy
-of 88ing Classifier and Random Forest. These models
-also recorded the highest F1-scores and AUC values,
-signifying strong discrimination capabilities. Decision Tree and KNN offered a balance between interpretability and accuracy, while Naive Bayes and Logistic Regres- sion, though slightly less accurate, maintained good precision.
+This study investigated the effectiveness of several machine learning models for multi-class classification of diabetic conditions using a real-world dataset. Through comprehensive evaluation using stratified cross-validation and hyperparameter optimization, we identified that ensemble-based models---specifically XGBoost and the Voting Classifier---consistently achieved superior predictive performance.
+
+The Decision Tree classifier, when properly pruned and regulated, offered a balance between interpretability and accuracy, making it a viable choice for clinical settings where explainability is crucial. Meanwhile, Naive Bayes, despite its simplifying assumptions, demonstrated respectable performance and could serve as a lightweight baseline model.
+
+Our experiments affirm the critical role of appropriate preprocessing (such as feature scaling and encoding), hyperparameter tuning, and model selection in achieving optimal performance in health-related predictive analytics. Furthermore, feature importance analysis confirmed the influence of key medical indicators such as glucose, insulin, and BMI in predicting diabetes-related outcomes.
+
+Future work can explore model calibration, deeper hyperparameter optimization (e.g., via Bayesian search), and integration of additional clinical features such as genetic markers or lifestyle variables to enhance predictive power. Moreover, deploying explainable AI techniques like SHAP or LIME could further aid in understanding and validating model decisions in real-world medical environments.
+
+
 
 
 % Bibliography
