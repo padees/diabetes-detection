@@ -25,19 +25,14 @@
 
 % /* Abstract */
 \begin{abstract}
-Background:
 Diabetes is a chronic endocrine disorder characterized by elevated blood glucose levels, leading to severe complications. Its global prevalence has risen sharply over the past decade, with over 570 million cases projected by 2025. Concurrently, advancements in machine learning have enabled new possibilities for disease prediction and classification.
 
-Objective:
 This study aims to develop a machine learning model capable of predicting both the presence and type of diabetes using an integrated dataset.
 
-Methods:
-To address the limitations of existing models—particularly their inability to differentiate between diabetes types due to limited data—a compounded dataset was created by merging two publicly available sources. The model performs binary classification to detect diabetes presence and multiclass classification to identify type, including Prediabetes, Type 1, Type 2, and Pancreatogenic Diabetes. Algorithms implemented include Naive Bayes, K-Nearest Neighbours, Logistic Regression, Random Forest, and XGBoost.
+To address the limitations of existing models—particularly their inability to differentiate between diabetes types due to limited data—a compounded dataset was created by merging two publicly available sources : one a real-world datset, and one a synthetic dataset. The model performs binary classification to detect diabetes presence and multiclass classification to identify type, including Prediabetes, Type 1, Type 2, and Pancreatogenic Diabetes. Algorithms implemented include Naive Bayes, K-Nearest Neighbours, Logistic Regression, Random Forest, and XGBoost.
 
-Results:
 XGBoost achieved the highest performance among all models. Its feature importance scores were analyzed to validate predictive accuracy and to identify key factors distinguishing diabetes types.
 
-Conclusion:
 The proposed model demonstrates potential for effective diabetes screening and classification using routinely collected clinical data, supporting early diagnosis and personalized treatment planning.
 
 \end{abstract}
@@ -97,9 +92,8 @@ Random Forest is yet another important algorithm, providing interpretability thr
 Despite these advancements, most models focus on binary classification (diabetes vs. non-diabetes) and fail to differentiate between diabetes types, such as Type 1, Type 2, Prediabetes, and Pancreatogenic Diabetes.
 This limitation underscores the need for more comprehensive approaches, such as the one proposed in this study.
 
-% What we have attempted
 This limitation stems from the lack of datasets that include sufficient data points for type-specific classification. To bridge this gap, this study proposes a novel two-stage approach :
-An initial binary classification using the Pima Indians dataset, and a subsequent multi-class classification using a secondary dataset to distinguish between Type 1 Diabetes, Type 2 Diabetes, Prediabetes, and Pancreatogenic Diabetes.
+An initial binary classification using the Pima Indians dataset, and a subsequent multi-class classification using a secondary, programmatically generated dataset to distinguish between Type 1 Diabetes, Type 2 Diabetes, Prediabetes, and Pancreatogenic Diabetes.
 By developing the model in this manner, we address the critical limitation of existing approaches, which lack the granularity to differentiate between diabetes subtypes, thereby enabling more precise predictions.
 
 \section{Literature Review}
