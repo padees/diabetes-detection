@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/VoidLinux) (preloaded format=pdflatex 2025.6.27)  28 JUN 2025 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/VoidLinux) (preloaded format=pdflatex 2025.6.27)  2 JUL 2025 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -572,78 +572,74 @@ Package hyperref Info: Link coloring ON on input line 22.
  [1
 
 {/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-<../../assets/feature_importance/correlation_matrix.png, id=84, 643.203pt x 477
+[2] [3]
+<../../assets/feature_importance/correlation_matrix.png, id=91, 643.203pt x 477
 .7047pt>
 File: ../../assets/feature_importance/correlation_matrix.png Graphic file (type
  png)
 <use ../../assets/feature_importance/correlation_matrix.png>
 Package pdftex.def Info: ../../assets/feature_importance/correlation_matrix.png
   used on input line 191.
-(pdftex.def)             Requested size: 213.16214pt x 158.31363pt.
-<../../assets/matrices/randomForest.png, id=86, 1148.3703pt x 426.393pt>
-File: ../../assets/matrices/randomForest.png Graphic file (type png)
-<use ../../assets/matrices/randomForest.png>
-Package pdftex.def Info: ../../assets/matrices/randomForest.png  used on input 
-line 198.
-(pdftex.def)             Requested size: 213.16214pt x 79.14822pt.
- [3]
-<../../assets/matrices/decisionTree.png, id=92, 935.8965pt x 426.393pt>
+(pdftex.def)             Requested size: 386.95897pt x 287.39767pt.
+<../../assets/matrices/decisionTree.png, id=93, 935.8965pt x 426.393pt>
 File: ../../assets/matrices/decisionTree.png Graphic file (type png)
 <use ../../assets/matrices/decisionTree.png>
 Package pdftex.def Info: ../../assets/matrices/decisionTree.png  used on input 
-line 205.
-(pdftex.def)             Requested size: 213.16214pt x 97.11191pt.
-<../../assets/matrices/discreteBayes.png, id=93, 1149.093pt x 426.393pt>
-File: ../../assets/matrices/discreteBayes.png Graphic file (type png)
-<use ../../assets/matrices/discreteBayes.png>
-Package pdftex.def Info: ../../assets/matrices/discreteBayes.png  used on input
- line 212.
-(pdftex.def)             Requested size: 213.16214pt x 79.09616pt.
-<../../assets/matrices/logisticRegression.png, id=94, 1149.093pt x 426.393pt>
-File: ../../assets/matrices/logisticRegression.png Graphic file (type png)
-<use ../../assets/matrices/logisticRegression.png>
-Package pdftex.def Info: ../../assets/matrices/logisticRegression.png  used on 
-input line 219.
-(pdftex.def)             Requested size: 213.16214pt x 79.09616pt.
-
-Overfull \hbox (63.2313pt too wide) in paragraph at lines 233--247
- [][] 
+line 198.
+(pdftex.def)             Requested size: 483.69687pt x 220.37233pt.
+<../../assets/matrices/randomForest.png, id=94, 1148.3703pt x 426.393pt>
+File: ../../assets/matrices/randomForest.png Graphic file (type png)
+<use ../../assets/matrices/randomForest.png>
+Package pdftex.def Info: ../../assets/matrices/randomForest.png  used on input 
+line 206.
+(pdftex.def)             Requested size: 483.69687pt x 179.59782pt.
+ [4 <../../assets/feature_importance/correlation_matrix.png> <../../assets/matr
+ices/decisionTree.png>]
+<../../assets/matrices/xgboost_train.png, id=103, 372.1905pt x 328.8285pt>
+File: ../../assets/matrices/xgboost_train.png Graphic file (type png)
+<use ../../assets/matrices/xgboost_train.png>
+Package pdftex.def Info: ../../assets/matrices/xgboost_train.png  used on input
+ line 215.
+(pdftex.def)             Requested size: 232.17242pt x 205.12093pt.
+<../../assets/matrices/xgboost_test.png, id=104, 372.1905pt x 328.8285pt>
+File: ../../assets/matrices/xgboost_test.png Graphic file (type png)
+<use ../../assets/matrices/xgboost_test.png>
+Package pdftex.def Info: ../../assets/matrices/xgboost_test.png  used on input 
+line 222.
+(pdftex.def)             Requested size: 232.17242pt x 205.12093pt.
+ [5 <../../assets/matrices/randomForest.png> <../../assets/matrices/xgboost_tra
+in.png> <../../assets/matrices/xgboost_test.png>]
+Overfull \hbox (0.52612pt too wide) in paragraph at lines 253--254
+[]\OT1/cmr/m/n/10 Performance of the De-ci-sion Tree clas-si-fier was op-ti-miz
+ed us-ing cost-complexity prun-ing with cross-validation.
  []
 
-[4 <../../assets/feature_importance/correlation_matrix.png> <../../assets/matri
-ces/randomForest.png> <../../assets/matrices/decisionTree.png> <../../assets/ma
-trices/discreteBayes.png> <../../assets/matrices/logisticRegression.png>]
-(./main.bbl [5]
-Underfull \hbox (badness 6725) in paragraph at lines 36--42
-[]\OT1/cmr/m/n/8 Diego Garc^^S^^Pa-Compe^^San, Alan R Jim^^Senez-Rodr^^S^^Pguez
-,
- []
-
-) [6] (./main.aux)
+[6] (./main.bbl) [7] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 49EEE19DF453A17CE9350764003B79E9;960.
  ) 
 Here is how much of TeX's memory you used:
- 12373 strings out of 476025
- 199162 string characters out of 5796500
- 1876388 words of memory out of 5000000
- 32596 multiletter control sequences out of 15000+600000
- 517353 words of font info for 50 fonts, out of 8000000 for 9000
+ 12382 strings out of 476025
+ 199234 string characters out of 5796500
+ 1869388 words of memory out of 5000000
+ 32601 multiletter control sequences out of 15000+600000
+ 518797 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,76p,941b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (6 pages, 343248 bytes).
+ 75i,8n,76p,1105b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (7 pages, 352219 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  90 words of extra memory for PDF output out of 10000 (max. 10000000)
 

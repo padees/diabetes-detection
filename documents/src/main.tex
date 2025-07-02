@@ -16,11 +16,11 @@
 % /* End of declarations */
 
 % /* Start of content */
-\title{Diabetes Detection With Machine Learning}
-% \author{author-list}
+\title{Title}
+\author{Author-List}
 
 \begin{document}
-% \maketitle
+\maketitle
 \fontsize{10}{12}\selectfont
 
 % /* Abstract */
@@ -36,7 +36,7 @@ XGBoost achieved the highest performance among all models. Its feature importanc
 The proposed model demonstrates potential for effective diabetes screening and classification using routinely collected clinical data, supporting early diagnosis and personalized treatment planning.
 
 \end{abstract}
-\begin{multicols}{2}
+% \begin{multicols}{2}
 
 \section{Introduction}
 
@@ -188,37 +188,41 @@ Blood Glucose also shows moderate correlations with Insulin (r = 0.57), BMI (r =
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{../../assets/feature_importance/correlation_matrix.png}
+    \includegraphics[width=0.8\linewidth]{../../assets/feature_importance/correlation_matrix.png}
     \caption{Correlation matrix of input features}
     \label{fig:correlation_matrix}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{../../assets/matrices/randomForest.png}
+    \includegraphics[width=1.0\linewidth]{../../assets/matrices/decisionTree.png}
+    \caption{Decision Tree confusion matrix}
+    \label{fig:dt_matrix}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{../../assets/matrices/randomForest.png}
     \caption{Random Forest confusion matrix}
     \label{fig:rf_matrix}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{../../assets/matrices/decisionTree.png}
-    \caption{Decision Tree confusion matrix}
-    \label{fig:dt_matrix}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{../../assets/matrices/discreteBayes.png}
-    \caption{Discrete Bayes confusion matrix}
-    \label{fig:bayes_matrix}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth]{../../assets/matrices/logisticRegression.png}
-    \caption{Logistic Regression confusion matrix}
-    \label{fig:lr_matrix}
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../assets/matrices/xgboost_train.png}
+        \caption{XGBoost confusion matrix (Train)}
+        \label{fig:bayes_matrix_train}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../assets/matrices/xgboost_test.png}
+        \caption{XGBoost confusion matrix (Test)}
+        \label{fig:bayes_matrix_test}
+    \end{minipage}
 \end{figure}
 
 \subsection{Machine Learning Models}
@@ -235,11 +239,8 @@ Five supervised learning algorithms were employed to build and evaluate the pred
 \textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score}  \\
 \midrule
 Decision Tree         & 0.93 & 0.95 & 0.93 & 0.93 \\
-Naive Bayes           & 0.92 & 0.93 & 0.92 & 0.92  \\
-K-Nearest Neighbors   & 0.81 & 0.79 & 0.76 & 0.77  \\
-Logistic Regression   & 0.89 & 0.89 & 0.89 & 0.89  \\
-Random Forest         & 0.97 & 0.97 & 0.97 & 0.97  \\
-XGBoost               & 0.96 & 0.96 & 0.96 & 0.96 \\
+Random Forest         & 0.96 & 0.96 & 0.96 & 0.96 \\
+XGBoost               & 0.97 & 0.97 & 0.97 & 0.97 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -251,13 +252,13 @@ In this section, we present the results of our machine learning experiments for 
 
 Performance of the Decision Tree classifier was optimized using cost-complexity pruning with cross-validation. The optimal \texttt{ccp\_alpha} value was determined through a 10-fold Stratified K-Fold cross-validation process, balancing generalization and model simplicity. The final pruned tree achieved a testing accuracy of approximately 80\%, indicating a robust fit without overfitting the training data. The classification report demonstrated fairly balanced precision and recall values across the target classes, with the F1-score reflecting this balance.
 
-Figure 2 shows that the Random Forest achieves perfect classification for prediabetes (0), type 1 diabetes (1), and type 3c diabetes (3) in both training and testing. Type 2 diabetes (2) is frequently misclassified as type 3c, with 411 training and 295 testing errors. This suggests significant feature overlap between type 2 and type 3c diabetes. Class separation is robust for prediabetes and type 1, but weak between type 2 and 3c.
+From Figure 2, we can conclude that decision trees exhibit a worse misclassification ratio between type 2 and type 3c diabetes compared to other models. This indicates that the tree model struggles more with separating these two clinically similar classes. While classification of prediabetes and type 1 remains accurate, type 2 instances are more frequently mislabeled as type 3c. The rigid splits of decision trees likely fail to capture subtle feature distinctions. This suggests limited generalization for overlapping diabetes subtypes.
 
-From Figure 3, we can conclude that decision trees exhibit a worse misclassification ratio between type 2 and type 3c diabetes compared to other models. This indicates that the tree model struggles more with separating these two clinically similar classes. While classification of prediabetes and type 1 remains accurate, type 2 instances are more frequently mislabeled as type 3c. The rigid splits of decision trees likely fail to capture subtle feature distinctions. This suggests limited generalization for overlapping diabetes subtypes.
+Figure 3 shows that the Random Forest achieves perfect classification for prediabetes (0), type 1 diabetes (1), and type 3c diabetes (3) in both training and testing. Type 2 diabetes (2) is frequently misclassified as type 3c, with 411 training and 295 testing errors. This suggests significant feature overlap between type 2 and type 3c diabetes. Class separation is robust for prediabetes and type 1, but weak between type 2 and 3c.
 
-Figure 4 shows that the Discrete Bayes classifier shows excellent performance in distinguishing Prediabetes (0) and Type 1 diabetes (1), with near-perfect classification in both the training and testing sets, indicating clear separability of these classes. However, there is substantial confusion between Type 2 diabetes (2) and Type 3c diabetes (3), with 467 Type 2 samples misclassified as Type 3c in training and 204 in testing, and 610 Type 3c samples misclassified as Type 2 in training and 270 in testing. This bidirectional misclassification, again suggests significant feature overlap between these two classes. The overall accuracy is high, with 92.81\% on the training set and 92.63\% on the testing set, indicating minimal overfitting. To improve classification performance, especially between Type 2 and Type 3c diabetes, enhanced feature engineering or additional discriminatory inputs is required.
+From Figure 4 and 5, it is clear that XGBoost achieves the most consistent and reliable classification across all four diabetes subtypes, showing no errors in identifying prediabetes and type 1 diabetes, and substantially lower confusion between type 2 and type 3c compared to decision trees. This superior performance can be attributed to XGBoost’s gradient boosting framework, which combines multiple weak learners into a strong ensemble, allowing it to capture complex, nonlinear feature interactions more effectively. Unlike standard decision trees, XGBoost incorporates regularization to prevent overfitting, handles missing data internally, and optimizes using second-order gradients, which enhances convergence and model generalization. These advantages are particularly beneficial in medical datasets where feature dependencies and subtle variations across classes are common. Consequently, XGBoost provides better class separation in high-dimensional clinical feature spaces, especially when dealing with overlapping phenotypes such as type 2 and type 3c diabetes.
 
-Logistic Regression handles Prediabetes (0) and Type 1 (1) very well, nearly perfect in both train and test sets. Type 2 (2) and Type 3c (3) are frequently confused—898 training and 240 testing samples of Type 2 are misclassified as Type 3c, and 736 training and 189 testing samples of Type 3c are misclassified as Type 2. Accuracy drops to 89.98\% (train) and 89.48\% (test), worse than DB. Feature overlap between Type 2 and Type 3c severely degrades performance. Model is too simplistic for this distinction.
+Logistic Regression handles Prediabetes (0) and Type 1 (1) very well, nearly perfect in both train and test sets. Type 2 (2) and Type 3c (3) are frequently confused—898 training and 240 testing samples of Type 2 are misclassified as Type 3c, and 736 training and 189 testing samples of Type 3c are misclassified as Type 2. Accuracy drops to 89.98\% (train) and 89.48\% (test), worse than DB. Feature overlap between Type 2 and Type 3c severely degrades performance. Model is too simplistic for this distinction. Hence this model was not chosen.
 
 The confusion matrices further revealed that the Decision Tree classifier was moderately effective in correctly classifying samples across all categories, although minor misclassifications between adjacent or overlapping conditions (e.g., class 2 vs. class 3) were observed. The feature importance plot provided insights into which attributes most influenced the model's decisions. In this case, features like \texttt{Blood Glucose Level}, \texttt{Insulin}, and \texttt{BMI} were identified as strong contributors to the model’s decisions, aligning with known medical knowledge regarding diabetes biomarkers.
 
@@ -284,6 +285,6 @@ Future work can explore model calibration, deeper hyperparameter optimization (e
 \bibliographystyle{unsrt}
 \bibliography{main}
 
-\end{multicols}
+% \end{multicols}
 
 \end{document}
