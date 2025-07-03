@@ -49,7 +49,11 @@ There are multiple factors that can cause diabetes, such as pancreatic cancer, p
 Apart from these medical factors, unhealthy dietary patterns, socio-economic development, and sedentary lifestyles have been identified as determinants that are driving an increase in prevelance of diabetes\cite{caturano2023oxidative}.
 
 % Diabetes in numbers
-It is estimated that 537 million people in the age range of 20 to 79 are affected by diabetes, and this number will grow to 643 million by 2045.
+In 2021, there were 529 million people living with diabetes worldwide, and the global age-standardised total diabetes prevalence was 6·1% \cite{ong2023global}.
+A similar conclusion was reached by Sun et. al \cite{sun2022idf}.
+
+
+It is estimated that 537 million people in the age range of 20 to 79 are affected by diabetes currently, and this number will grow to 643 million by 2045.
 A study by Kumar et al. (2021) concluded that incidence of diabetes in India would grow from 9.6\% in 2021 to 10.9\% in 2045\cite{kumar2024prevalence}.
 
 % Common symptoms
@@ -80,7 +84,10 @@ The recent rise in artificial intelligence has had an impact on the healthcare f
 It has accelerated the efficiency and accuracy of diagnosis by enabling  data-driven decisions with greater confidence. AI systems can analyze vast amounts of medical data—such as electronic health records (EHRs), medical imaging, and genomics, allowing for early detection of conditions like cancer, heart disease, and neurological disorders, often at stages when treatments are more effective.
 
 However, the healthcare field poses its own set of challenges to Artificial Intelligence. Availability of credible datasets, especially in economically challenged areas is scarce. This might inadvertently lead to a model that is biased due the prevalence of data from socio-ethnic groups with higher accesibility to healthcare facilities.
+There are increasing ethical concerns about the unequal impact these models may have on underrepresented communities \cite{chen2023algorithmic}.
 Data privacy is yet another concern, and the abstract nature of many machine learning models raises questions about their internal working and their reliability.
+
+Addressing biases in medical AI requires continued research, larger and more representative patient data, and improved transparency in literature. Efforts to detect and mitigate bias, particularly in clinical decision-making, are essential to prevent health disparities and ensure equitable benefits for all patients \cite{cross2024bias}.
 
 % A few models
 
@@ -92,13 +99,13 @@ Random Forest is yet another important algorithm, providing interpretability thr
 Despite these advancements, most models focus on binary classification (diabetes vs. non-diabetes) and fail to differentiate between diabetes types, such as Type 1, Type 2, Prediabetes, and Pancreatogenic Diabetes.
 This limitation underscores the need for more comprehensive approaches, such as the one proposed in this study.
 
-This limitation stems from the lack of datasets that include sufficient data points for type-specific classification. To bridge this gap, this study proposes a novel two-stage approach :
+This limitation stems from the lack of datasets that include sufficient data points for type-specific classification. To bridge this gap, this study proposes a first stage and second stage :
 An initial binary classification using the Pima Indians dataset, and a subsequent multi-class classification using a secondary, programmatically generated dataset to distinguish between Type 1 Diabetes, Type 2 Diabetes, Prediabetes, and Pancreatogenic Diabetes.
 By developing the model in this manner, we address the critical limitation of existing approaches, which lack the granularity to differentiate between diabetes subtypes, thereby enabling more precise predictions.
 
 \section{Literature Review}
 
-Many attempts have been made to successfully integrate ML techniques for detection of diabetes, and several different techniques have been used for the same\cite{sharma2021comprehensive}.
+Many attempts have been made to successfully integrate Machine Learning techniques for detection of diabetes, and several different techniques have been used for the same\cite{sharma2021comprehensive}.
 
 KNN predicts the class of a data point by looking at the classes of its nearest neighbours in the feature space. It is a simple, non-parametric method that relies totally on the data’s structure. While it gives a straightforward interpretation, it is sensitive to the choice of distance metric and the number of neighbors.
 Logistic Regression predicts the probability of a binary outcome using a sigmoid function. It learns the relationship between input features and the log-odds of the target variable, making linear classifier. However, it assumes a linear relationship between features and the target, which can limit its performance on complex datasets.
@@ -110,12 +117,14 @@ Abdulhadi and Al-Mousa obtained an accuracy of 82\% using the Random Forest Clas
 Ghosh et.al obtained an accuracy of 99.35\% using Random Forest Classifier \cite{ghosh2021comparative}.
 Thotad et.al also concluded that Random Forest outperformed other models in detection on Indian demographic dataset \cite{thotad2023diabetes}.
 
-It has been shown that ensemble techniques perform better than logistic regression, due to the fact that LR sufferrs from assuming linear relationships and is much more sensitive to outliers.
+It has been shown that ensemble techniques perform better than logistic regression, due to the fact that Logistic Regression sufferrs from assuming linear relationships and is much more sensitive to outliers.
 One exception is the study by Khaleel and Al-Bakry, where Logistic Regression showed an accuracy of 94\%, above that of Naive Bayes 79\% and KNN 69\% \cite{khaleel2023diagnosis}.
-Rajendra and Latifi concluded that the ensemble techinques Max Voting and Stacking fare better than Logistic Regression, with the latter having an accuracy 93.04\% of to the former's 74.03 when trained without feature selection\cite{rajendra2021prediction}.
-Seto et al. provided evidence that Gradient Boosted Decision Trees (GBDT) and logistic regression models perform somewhat equally upto training data size of $10^{4}$, GBDT shows a significant increase after this number, while LR the model's metrics become saturated\cite{seto2022gradient}.
 
-Salem et al. utilised the basic K - nearest neighbours and two of its variants which allow partial membership in multiple classes, Fuzzy KNN nand TFKNN. TFKNN turned out to be the best performer with 94.13\% specific accuracy\cite{salem2022fine}
+Rajendra and Latifi concluded that the ensemble techinques Max Voting and Stacking fare better than Logistic Regression, with the latter having provided evidence that Gradient Boosted Decision Trees (GBDT) and logistic regression models perform somewhat equally upto training data size of $10^{4}$, GBDT shows a significant increase after this number, while Logistic Regression the model's metrics become saturated\cite{rajendra2021prediction}.
+
+Seto et. al provided evidence that Gradient Boosted Decison Trees (GBDT) and logistic regression models performsomewhat equally upto training data size of 10000. GBDT shows a significant increase after this number, while the logistic regression model's metrics become saturated \cite{seto2022gradient}.
+
+Salem et al. utilised the basic K - nearest neighbours and two of its variants which allow partial membership in multiple classes, Fuzzy KNN and Three - Fold Nested K-Nearest Neighbours. TFKNN turned out to be the best performer with 94.13\% specific accuracy\cite{salem2022fine}
 
 While instance-based algorithms like KNN and its fuzzy variants excel in modeling local data relationships, they tend to struggle with high-dimensional datasets and are computationally expensive during inference. These limitations have led researchers to increasingly explore ensemble methods and boosting techniques, which offer a better balance between predictive power and computational efficiency. In particular, Gradient Boosting frameworks such as XGBoost have emerged as state-of-the-art due to their ability to model complex, non-linear interactions while mitigating overfitting through regularization.
 
@@ -255,6 +264,8 @@ Performance of the Decision Tree classifier was optimized using cost-complexity 
 From Figure 2, we can conclude that decision trees exhibit a worse misclassification ratio between type 2 and type 3c diabetes compared to other models. This indicates that the tree model struggles more with separating these two clinically similar classes. While classification of prediabetes and type 1 remains accurate, type 2 instances are more frequently mislabeled as type 3c. The rigid splits of decision trees likely fail to capture subtle feature distinctions. This suggests limited generalization for overlapping diabetes subtypes.
 
 Figure 3 shows that the Random Forest achieves perfect classification for prediabetes (0), type 1 diabetes (1), and type 3c diabetes (3) in both training and testing. Type 2 diabetes (2) is frequently misclassified as type 3c, with 411 training and 295 testing errors. This suggests significant feature overlap between type 2 and type 3c diabetes. Class separation is robust for prediabetes and type 1, but weak between type 2 and 3c.
+
+This is in line with findings by Phongying and Hiriote, who found that Random Forest technique is superior to Support Vector Machines, Decision Trees, and K-nearest neighbour methods \cite{phongying2023diabetes}.
 
 From Figure 4 and 5, it is clear that XGBoost achieves the most consistent and reliable classification across all four diabetes subtypes, showing no errors in identifying prediabetes and type 1 diabetes, and substantially lower confusion between type 2 and type 3c compared to decision trees. This superior performance can be attributed to XGBoost’s gradient boosting framework, which combines multiple weak learners into a strong ensemble, allowing it to capture complex, nonlinear feature interactions more effectively. Unlike standard decision trees, XGBoost incorporates regularization to prevent overfitting, handles missing data internally, and optimizes using second-order gradients, which enhances convergence and model generalization. These advantages are particularly beneficial in medical datasets where feature dependencies and subtle variations across classes are common. Consequently, XGBoost provides better class separation in high-dimensional clinical feature spaces, especially when dealing with overlapping phenotypes such as type 2 and type 3c diabetes.
 

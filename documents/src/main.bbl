@@ -14,6 +14,14 @@ Alfredo Caturano, Margherita D’Angelo, Andrea Mormone, Vincenzo Russo,
   lifestyle modifications.
 \newblock {\em Current Issues in Molecular Biology}, 45(8):6651--6666, 2023.
 
+\bibitem{sun2022idf}
+Hong Sun, Pouya Saeedi, Suvi Karuranga, Moritz Pinkepank, Katherine Ogurtsova,
+  Bruce~B Duncan, Caroline Stein, Abdul Basit, Juliana~CN Chan, Jean~Claude
+  Mbanya, et~al.
+\newblock Idf diabetes atlas: Global, regional and country-level diabetes
+  prevalence estimates for 2021 and projections for 2045.
+\newblock {\em Diabetes research and clinical practice}, 183:109119, 2022.
+
 \bibitem{kumar2024prevalence}
 Arvind Kumar, Ruby Gangwar, Abrar Ahmad~Zargar, Ranjeet Kumar, and Amit Sharma.
 \newblock Prevalence of diabetes in india: A review of idf diabetes atlas 10th
@@ -47,6 +55,18 @@ Channabasappa Shivaprasad, Yalamanchi Aiswarya, Shah Kejal, Atluri Sridevi,
   pancreatogenic diabetes and type 2 diabetes mellitus.
 \newblock {\em Journal of diabetes science and technology}, 15(1):134--140,
   2021.
+
+\bibitem{chen2023algorithmic}
+Richard~J Chen, Judy~J Wang, Drew~FK Williamson, Tiffany~Y Chen, Jana Lipkova,
+  Ming~Y Lu, Sharifa Sahai, and Faisal Mahmood.
+\newblock Algorithmic fairness in artificial intelligence for medicine and
+  healthcare.
+\newblock {\em Nature biomedical engineering}, 7(6):719--742, 2023.
+
+\bibitem{cross2024bias}
+James~L Cross, Michael~A Choma, and John~A Onofrey.
+\newblock Bias in medical ai: Implications for clinical decision-making.
+\newblock {\em PLOS Digital Health}, 3(11):e0000651, 2024.
 
 \bibitem{sharma2021comprehensive}
 Toshita Sharma and Manan Shah.
@@ -116,5 +136,10 @@ Md~Ashraf Uddin, Md~Manowarul Islam, Md~Alamin Talukder, Md~Al~Amin Hossain,
 \newblock Machine learning based diabetes detection model for false negative
   reduction.
 \newblock {\em Biomedical Materials \& Devices}, 2(1):427--443, 2024.
+
+\bibitem{phongying2023diabetes}
+Methaporn Phongying and Sasiprapa Hiriote.
+\newblock Diabetes classification using machine learning techniques.
+\newblock {\em Computation}, 11(5):96, 2023.
 
 \end{thebibliography}
