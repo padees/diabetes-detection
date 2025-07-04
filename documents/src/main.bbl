@@ -137,9 +137,68 @@ Md~Ashraf Uddin, Md~Manowarul Islam, Md~Alamin Talukder, Md~Al~Amin Hossain,
   reduction.
 \newblock {\em Biomedical Materials \& Devices}, 2(1):427--443, 2024.
 
+\bibitem{kavakiotis2017machine}
+Ioannis Kavakiotis, Olga Tsave, Athanasios Salifoglou, Nicos Maglaveras,
+  Ioannis Vlahavas, and Ioanna Chouvarda.
+\newblock Machine learning and data mining methods in diabetes research.
+\newblock {\em Computational and structural biotechnology journal},
+  15:104--116, 2017.
+
+\bibitem{gautier2021artificial}
+Thibault Gautier, Leah~B Ziegler, Matthew~S Gerber, Enrique
+  Campos-N{\'a}{\~n}ez, and Stephen~D Patek.
+\newblock Artificial intelligence and diabetes technology: A review.
+\newblock {\em Metabolism}, 124:154872, 2021.
+
+\bibitem{gupta2022comparing}
+Sunil Gupta, Kamal Saluja, Ankur Goyal, Amit Vajpayee, and Vipin Tiwari.
+\newblock Comparing the performance of machine learning algorithms using
+  estimated accuracy.
+\newblock {\em Measurement: Sensors}, 24:100432, 2022.
+
+\bibitem{ordonez2023machine}
+Nelson~E Ordo{\~n}ez-Guillen, Jose~Luis Gonzalez-Compean, Ivan Lopez-Arevalo,
+  Miguel Contreras-Murillo, and Edwin Aldana-Bobadilla.
+\newblock Machine learning based study for the classification of type 2
+  diabetes mellitus subtypes.
+\newblock {\em BioData Mining}, 16(1):24, 2023.
+
+\bibitem{zhong2020classification}
+J~Zhong.
+\newblock Classification and diagnosis of diabetes: standards of medical care
+  in diabetes—2020.
+\newblock {\em Diabetes Care}, 43(Supplement 1):S14--S31, 2020.
+
+\bibitem{mani2012type}
+Subramani Mani, Yukun Chen, Tom Elasy, Warren Clayton, and Joshua Denny.
+\newblock Type 2 diabetes risk forecasting from emr data using machine
+  learning.
+\newblock In {\em AMIA annual symposium proceedings}, volume 2012, page 606,
+  2012.
+
+\bibitem{febrian2023diabetes}
+Muhammad~Exell Febrian, Fransiskus~Xaverius Ferdinan, Gustian~Paul Sendani,
+  Kristien~Margi Suryanigrum, and Rezki Yunanda.
+\newblock Diabetes prediction using supervised machine learning.
+\newblock {\em Procedia Computer Science}, 216:21--30, 2023.
+
 \bibitem{phongying2023diabetes}
 Methaporn Phongying and Sasiprapa Hiriote.
 \newblock Diabetes classification using machine learning techniques.
 \newblock {\em Computation}, 11(5):96, 2023.
+
+\bibitem{lacoste2012bayesian}
+Alexandre Lacoste, Fran{\c{c}}ois Laviolette, and Mario Marchand.
+\newblock Bayesian comparison of machine learning algorithms on single and
+  multiple datasets.
+\newblock In {\em Artificial Intelligence and Statistics}, pages 665--675.
+  PMLR, 2012.
+
+\bibitem{sethi2019comparative}
+Kapil Sethi, Ankit Gupta, Gaurav Gupta, and Varun Jaiswal.
+\newblock Comparative analysis of machine learning algorithms on different
+  datasets.
+\newblock In {\em Circulation in computer science international conference on
+  innovations in computing (ICIC 2017)}, volume~87, 2019.
 
 \end{thebibliography}
